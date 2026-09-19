@@ -216,3 +216,29 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+# ===== 本项目自定义忽略 =====
+# 环境变量（API Key）
+.env.local
+
+# 数据文件（灵感、对话历史）
+data.json
+chat_history.json
+*.db
+*.sqlite3
+
+# 小说草稿和正文
+novel/
+drafts/
+*.docx
+
+# 个人笔记
+notes/
+private/
+
+# IDE
+.vscode/
+.idea/
+
+# 操作系统
+.DS_Store
+Thumbs.db
