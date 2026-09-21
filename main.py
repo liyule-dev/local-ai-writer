@@ -1,6 +1,6 @@
 import json
 import os
-from ai_client import ask_ai
+from ai_client import ask_ai,clear_chat_history
 
 DATA_FILE = "data.json"
 
@@ -23,6 +23,7 @@ def show_nemu():
     print("2.查看灵感")
     print("3.删除灵感")
     print("4.和AI讨论灵感")
+    print("5.清空AI对话历史")
     print("0.退出")
     
 def main():
@@ -70,6 +71,10 @@ def main():
             prompt = input("你想和AI讨论什么：")
             answer = ask_ai(prompt)
             print("\nAI回应：",answer)
+
+        elif choice == "5":
+            clear_chat_history()
+            print("对话历史已清空")
 
         elif choice == "0":
             save_inspirations(inspirations)

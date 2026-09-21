@@ -217,7 +217,7 @@ __marimo__/
 # Streamlit
 .streamlit/secrets.toml
 # ===== 本项目自定义忽略 =====
-# 环境变量（API Key）
+# 环境变量（API Key），.env在上面
 .env.local
 
 # 数据文件（灵感、对话历史）
