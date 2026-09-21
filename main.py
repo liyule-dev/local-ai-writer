@@ -1,5 +1,6 @@
 import json
 import os
+from ai_client import ask_ai
 
 DATA_FILE = "data.json"
 
@@ -21,7 +22,8 @@ def show_nemu():
     print("1.添加灵感")
     print("2.查看灵感")
     print("3.删除灵感")
-    print("4.退出")
+    print("4.和AI讨论灵感")
+    print("0.退出")
     
 def main():
     inspirations = load_inspirations()
@@ -45,7 +47,7 @@ def main():
                 for i,item in enumerate(inspirations,1):
                     print(f"{i}.{item}")
 
-        elif choice =="3":
+        elif choice == "3":
             if not inspirations:
                 print("还没有灵感可删除")
             else:
@@ -65,12 +67,18 @@ def main():
                     print("请输入数字")
 
         elif choice == "4":
+            prompt = input("你想和AI讨论什么：")
+            answer = ask_ai(prompt)
+            print("\nAI回应：",answer)
+
+        elif choice == "0":
+            save_inspirations(inspirations)
             print("再见")
             break
+
         else:
             print("输入有误，请重新选择")
 
 if __name__ == "__main__":
     main()
-    
     
